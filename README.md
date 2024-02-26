@@ -1,6 +1,6 @@
 # Welcome to My Old Projects Repository! 🚀
 
-![Python and JavaScript]([http://visaodemercado.blogspot.com/2012/04/cristiano-ronaldo-o-melhor...](http://visaodemercado.blogspot.com/2012/04/cristiano-ronaldo-o-melhor...))
+![Python and JavaScript](https://media2.giphy.com/media/k5m2Gwn83tHo08dNRg/giphy.gif?cid=ecf05e47ye7jw93bdpiumry3kpnrmxxvsi4fruq3396giq6p&ep=v1_gifs_related&rid=giphy.gif&ct=g)
 
 Hey there! 👋 Welcome to my collection of ancient relics—I mean, my old Python and JavaScript projects.
 
