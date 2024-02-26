@@ -1,8 +1,10 @@
 # Welcome to My Old Projects Repository! 🚀
 
-![Python and JavaScript](https://media.giphy.com/media/l378AklRkquZSTa7i/giphy.gif)
+![Python and JavaScript](http://visaodemercado.blogspot.com/2012/04/cristiano-ronaldo-o-melhor...)
 
 Hey there! 👋 Welcome to my collection of ancient relics—I mean, my old Python and JavaScript projects.
+
+You can definitely tell I got better at making at least not horrendous readme files 😂
 
 ## About This Repository
 
