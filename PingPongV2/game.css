@@ -1,0 +1,37 @@
+/* game.css */
+
+/* Style the canvas */
+#gameBoard {
+	background-color: #000000;
+	border: 2px solid #ffffff;
+	display: block;
+	margin: 0 auto;
+}
+#gameTitle {
+	color: black;
+	font-size: 24px;
+	text-align: center;
+}
+/* Style the paddles */
+.paddle {
+	width: 10px;
+	height: 100px;
+	background-color: #ffffff;
+	position: absolute;
+}
+
+/* Style the ball */
+.ball {
+	width: 20px;
+	height: 20px;
+	background-color: #ffffff;
+	border-radius: 50%;
+	position: absolute;
+}
+
+/* Style the score display */
+#score {
+	color: black;
+	font-size: 24px;
+	text-align: center;
+}

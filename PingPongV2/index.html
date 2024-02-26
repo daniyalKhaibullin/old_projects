@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="game.css">
+    <title>Ping Pong V2 Game</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Press+Start+2P");    
+        /* Have to add or change the styles of the game */
+        #gameContainer {
+            display: none; /* Hide the game container by default */
+        }
+        #Rules {
+            display: none; /* Hide the rules section by default */
+        }
+        #scoreContainer {
+            text-align: center;
+        }
+        #backToMenuButton {
+            display: none; /* Hide the back to menu button by default */
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nes-container with-title" id="mainMenu">
+        <h1 class="title" id="mainTitle">Ping Pong V2</h1>
+        <button id="startButton" class="nes-btn is-primary">Start Game</button>
+        <button id="rulesButton" class="nes-btn">Rules</button>
+    </div>
+    <div class="nes-container with-title" id="gameContainer" style="display:none;">
+        <h1 class="title" id="gameTitle">Ping Pong V2</h1>
+        <div id="scoreContainer">
+            <h3>Score</h3>
+            <p id="score">0 : 0</p>
+            <button id="backToMenuButton" class="nes-btn" onclick="backToMenu()">Back to Menu</button>
+        </div>
+        <canvas id="gameBoard" width="500" height="500"></canvas>
+    </div>
+    <div class="nes-container with-title" id="Rules" style="display:none;">
+        <h1 class="title">Game Rules</h1>
+        <p>Welcome to our ping pong game! The objective of the game is to score points by hitting the ball past your opponent's paddle.</p>
+        <p>Here are the rules:</p>
+        <ol>
+            <li>The game is played on a table divided by a net.</li>
+            <li>Each player controls a paddle on their side of the table.</li>
+            <li>The player on the left controls their paddle using the <strong>W</strong> and <strong>S</strong> keys to move up and down, respectively.</li>
+            <li>The player on the right controls their paddle using the <strong>I</strong> and <strong>K</strong> keys to move up and down, respectively.</li>
+            <li>A point is scored when one player fails to return the ball within the bounds of the opponent's side of the table.</li>
+            <li>The first player to reach a predetermined number of points 11 wins the game.</li>
+        </ol>
+        <button id="backButton" class="nes-btn" onclick="backToMenu()">Back to Menu</button>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Get references to menu elements
+        const mainMenu = document.getElementById('mainMenu');
+        const gameContainer = document.getElementById('gameContainer');
+        const rulesScreen = document.getElementById('Rules');
+        const startButton = document.getElementById('startButton');
+        const rulesButton = document.getElementById('rulesButton');
+        const backButton = document.getElementById('backButton');
+        const backToMenuButton = document.getElementById('backToMenuButton');
+
+        // Function to show game container and hide menu
+        function startGame() {
+            mainMenu.style.display = 'none';
+            gameContainer.style.display = 'block';
+            backToMenuButton.style.display = 'inline-block'; // Show back to menu button
+        }
+
+        // Function to show rules screen and hide menu
+        // Function to show rules screen and hide menu
+				function showRules() {
+					mainMenu.style.display = 'none';
+					rulesScreen.style.display = 'block';
+					rulesScreen.style.height = '100%'; // Ensure the rules screen takes up full viewport height
+					backToMenuButton.style.display = 'inline-block'; // Show back to menu button
+				}
+
+
+        // Function to go back to menu from rules screen
+        function backToMenu() {
+            rulesScreen.style.display = 'none';
+            mainMenu.style.display = 'block';
+            gameContainer.style.display = 'none';
+            backToMenuButton.style.display = 'none'; // Hide back to menu button
+        }
+
+        // Event listeners for buttons
+        startButton.addEventListener('click', startGame);
+        rulesButton.addEventListener('click', showRules);
+    </script>
+</body>
+</html>
