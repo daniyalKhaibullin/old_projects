@@ -175,9 +175,7 @@ yarn-error.log
 /out/
 /build/
 
-# Compiled files
-*.min.js
-*.min.css
+
 
 # Webpack
 webpack-*.json
@@ -192,13 +190,7 @@ webpack-*.json
 .vscode/
 .idea/
 
-# Compiled TypeScript
-*.js
-*.js.map
 
-# Compiled CoffeeScript
-*.js
-*.js.map
 
 # Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
 .grunt/
