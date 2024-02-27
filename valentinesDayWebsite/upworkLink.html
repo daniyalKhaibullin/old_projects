@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <style>
+        body {
+            background-color: #FC94AF; /* Set rose color background */
+            color: white; /* Set text color to white */
+            background-image: url('https://loveandspecs.com/wp-content/uploads/2015/03/valentines-day-desktop-background-hearts.png'); /* Set wallpaper image */
+            background-size: cover; /* Cover the entire viewport */
+            opacity: 0.92; /* Set overall opacity */
+            position: relative; /* Set position relative to allow z-index */
+            overflow: hidden; /* Hide overflow */
+        }
+        .background-overlay {
+            position: absolute; /* Set position absolute to cover the entire viewport */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(252, 148, 175, 0.7); /* Set semi-transparent rosy tint */
+            z-index: 1; /* Ensure overlay is above other content */
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Make container fill the viewport height */
+            text-align: center; /* Align text center */
+            vertical-align: middle; /* Vertically align text */
+            z-index: 2; /* Ensure content is above overlay */
+            position: relative; /* Set position relative */
+            transition: opacity 0.5s; /* Smooth transition for opacity */
+        }
+        .valentine, .love-message {
+            background-color: rgba(254, 200, 209, 0.9); /* Set semi-transparent background color */
+            padding: 20px; /* Add some padding for better appearance */
+            border-radius: 10px; /* Add rounded corners to the box */
+            transition: opacity 0.5s; /* Smooth transition for opacity */
+            max-width: 400px; /* Set maximum width for the box */
+            margin: 40px auto; /* Center the box horizontally with more margin */
+        }
+        button {
+            background-color: #FFFFFF; /* Set button background color to white */
+            border: none; /* Remove button border */
+            color: #FC94AF; /* Set button text color to pink */
+            padding: 10px 20px; /* Add padding to the buttons */
+            font-size: 16px; /* Set font size */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            transition: background-color 0.3s; /* Smooth transition for background color change */
+            width: 100%; /* Set button width to match box width */
+            margin-bottom: 10px; /* Add margin bottom to separate the buttons */
+            box-sizing: border-box; /* Include padding and border in button size */
+        }
+        button:hover {
+            background-color: #FFB6C1; /* Change button background color on hover */
+        }
+        .gif img {
+            max-width: 100%; /* Make sure the image doesn't exceed the container width */
+            max-height: 180px; /* Set max height of the image */
+            margin-bottom: 10px; /* Add margin at the bottom */
+            transition: opacity 0.5s; /* Smooth transition for opacity */
+        }
+        .hidden {
+            display: none; /* Hide the element */
+        }
+        .love-message a {
+            color: #FC94AF;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        .love-message a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-overlay"></div> <!-- Add background overlay -->
+    <div class="container" id="container">
+        <div class="valentine hidden">
+            <h1>Will you be my valentine?</h1>
+            <div class="gif">
+                <img src="https://media3.giphy.com/media/Z0UdUZJisywbR3a8cI/giphy.gif?cid=ecf05e470vuaa20vymc96g22kpzbfwn2l9zy1724km6uo4i4&ep=v1_gifs_related&rid=giphy.gif&ct=g" alt="Cute GIF">
+            </div>
+            <button id="yes">Yes</button>
+            <button id="no">No</button>
+        </div>
+        
+        <div id="loveMessage" class="love-message hidden">
+            <h1>I Love You</h1>
+            <div class="gif">
+                <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmZhYmt2MmUxNDRwd3RsYTRjM3RmMHMzZnlmM2NlaDU0YjY5MmlociZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/M90mJvfWfd5mbUuULX/giphy.gif" alt="Love GIF">
+            </div>
+            <button id="playSong">Play Song</button>
+            <p>I'm really glad to have met you and have you in my life!!! ((((((:</p>
+        </div>
+    </div>
+    
+    <div class="container" id="transitionContainer">
+        <h1>Dedicated to My Love</h1>
+    </div>
+
+    <script>
+        var gifs = [
+            "https://media1.giphy.com/media/zLBSZe7sdk4tQ8L4up/giphy.gif?cid=ecf05e47oz2s7kfsr1p23g2ieibds73q1rrxx6ooydlrv6zf&ep=v1_gifs_related&rid=giphy.gif&ct=g",
+            "https://media1.giphy.com/media/xZn6QSIyPKNpaTbGa2/giphy.gif?cid=ecf05e47mtowvb9a7r2r2lrtgh2gjdd4xj4q0j38hukyy1wy&ep=v1_gifs_related&rid=giphy.gif&ct=g",
+            "https://media2.giphy.com/media/7y4Nc95399hsr24oYc/giphy.gif?cid=ecf05e470vuaa20vymc96g22kpzbfwn2l9zy1724km6uo4i4&ep=v1_gifs_related&rid=giphy.gif&ct=g"
+        ];
+        var changedResponses = [
+            "Noooo, don't say no baby <3",
+            "Yes would be the only answer tbh",
+            "Nooooo whyyy?",
+            "Think again",
+            "You really want to press no, huh???"
+        ];
+
+        var transitionContainer = document.getElementById("transitionContainer");
+        var container = document.getElementById("container");
+
+        setTimeout(function() {
+            transitionContainer.style.opacity = '0';
+            transitionContainer.style.transform = 'translateY(-100%)';
+            container.style.opacity = '1';
+            document.querySelector('.valentine').classList.remove('hidden');
+        }, 3000);
+
+        document.addEventListener("click", function() {
+            var message = document.getElementById("transitionContainer");
+            message.style.display = 'none';
+        });
+
+        document.getElementById("yes").addEventListener("click", function() {
+            var valentineBox = document.querySelector('.valentine');
+            valentineBox.classList.add("hidden");
+            showLoveMessage();
+        });
+
+        function showLoveMessage() {
+            // Get the love message box element
+            var loveMessage = document.getElementById("loveMessage");
+            // Scroll smoothly to the love message box
+            loveMessage.scrollIntoView({ behavior: 'smooth' });
+            // Display the love message box
+            loveMessage.classList.remove("hidden");
+        }
+
+        var no = document.getElementById("no");
+        no.addEventListener("click", change);
+        function change() {
+            var randomIndex = Math.floor(Math.random() * gifs.length);
+            var gifUrl = gifs[randomIndex];
+            var response = changedResponses[randomIndex];
+
+            // Fade out the GIF and valentine box
+            document.querySelector('.gif img').style.opacity = '0';
+            no.style.opacity = '0';
+
+            // After a short delay, change the GIF and button text, then fade them back in
+            setTimeout(function() {
+                document.querySelector('.gif img').src = gifUrl;
+                no.innerText = response;
+                document.querySelector('.gif img').style.opacity = '1';
+                no.style.opacity = '1';
+            }, 500); // 500ms delay
+        }
+
+        document.getElementById("playSong").addEventListener("click", function() {
+            // You can't autoplay audio due to browser restrictions
+            // So, let's open the YouTube video in a new tab
+            window.open("https://www.youtube.com/watch?v=BdrNvQ4YCng", "_blank");
+        });
+    </script>
+</body>
+</html>
